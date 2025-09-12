@@ -59,7 +59,7 @@ export function AboutSection() {
             >
               <div className="space-y-6">
                 <p className="text-lg leading-relaxed text-muted-foreground">
-                  Avec plus de <span className="text-primary font-semibold">5 ans d'expérience</span> dans le
+                  Avec plus de <span className="text-foreground font-semibold">5 ans d'expérience</span> dans le
                   développement web, je me spécialise dans la création d'applications modernes et performantes. Mon
                   expertise couvre l'ensemble du stack technologique, du front-end au back-end.
                 </p>
@@ -67,8 +67,8 @@ export function AboutSection() {
                 <p className="text-lg leading-relaxed text-muted-foreground">
                   Je suis constamment à la recherche de nouvelles technologies et de meilleures pratiques pour offrir
                   des solutions optimales à mes clients. Mon approche combine{" "}
-                  <span className="text-primary font-semibold">créativité</span>,
-                  <span className="text-primary font-semibold"> performance</span> et expérience utilisateur
+                  <span className="text-foreground font-semibold">créativité</span>,
+                  <span className="text-foreground font-semibold"> performance</span> et expérience utilisateur
                   exceptionnelle.
                 </p>
               </div>
@@ -82,7 +82,7 @@ export function AboutSection() {
                   {["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"].map((tech, index) => (
                     <span
                       key={tech}
-                      className={`px-4 py-2 bg-primary/10 text-primary rounded-full text-sm border border-primary/20 glass-effect hover-lift transform transition-all duration-300 ${isVisible ? "scale-100" : "scale-0"}`}
+                      className={`px-4 py-2 bg-muted/50 text-foreground rounded-full text-sm border border-border glass-effect hover-lift transform transition-all duration-300 ${isVisible ? "scale-100" : "scale-0"}`}
                       style={{ transitionDelay: `${800 + index * 100}ms` }}
                     >
                       {tech}
@@ -93,15 +93,15 @@ export function AboutSection() {
 
               <div className="grid grid-cols-3 gap-6 pt-6">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">50+</div>
+                  <div className="text-2xl font-bold text-foreground">50+</div>
                   <div className="text-sm text-muted-foreground">Projets réalisés</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">5+</div>
+                  <div className="text-2xl font-bold text-foreground">5+</div>
                   <div className="text-sm text-muted-foreground">Années d'expérience</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">100%</div>
+                  <div className="text-2xl font-bold text-foreground">100%</div>
                   <div className="text-sm text-muted-foreground">Satisfaction client</div>
                 </div>
               </div>

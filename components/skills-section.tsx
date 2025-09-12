@@ -89,7 +89,7 @@ export function SkillsSection() {
                       <div className="flex-1">
                         <div className="flex justify-between items-center mb-3">
                           <span className="font-semibold text-card-foreground text-lg">{skill.name}</span>
-                          <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
+                          <Badge variant="secondary" className="bg-muted/20 text-foreground border-border">
                             {animatedSkills[skill.name] || 0}%
                           </Badge>
                         </div>
