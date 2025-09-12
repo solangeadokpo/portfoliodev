@@ -44,7 +44,7 @@ export function Header() {
               <div className="absolute inset-0 bg-primary/20 rounded-xl blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-bold text-primary">DevPortfolio</span>
+              <span className="text-xl font-bold text-primary">Scriptia_</span>
               <span className="text-xs text-muted-foreground -mt-1">Creative Developer</span>
             </div>
           </div>
