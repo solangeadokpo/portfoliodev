@@ -4,12 +4,12 @@ import { Monitor, ShoppingBag, Layers } from "lucide-react"
 
 export function AboutSection() {
   return (
-    <section id="apropos" className="py-16 relative">
+    <section id="apropos" className="py-0 relative">
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Titre principal */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#F5F5F5] mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#F5F5F5] mb-6">
               I build websites, ecommerce stores, and
               <br />
               web apps.

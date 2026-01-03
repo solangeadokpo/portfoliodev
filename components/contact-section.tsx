@@ -75,7 +75,7 @@ export function ContactSection() {
               <Card className="p-6 bg-[#1A1A1A] border border-[#333333] hover:border-[#D4AF37]/50 transition-colors">
                 <Github className="w-7 h-7 text-[#D4AF37] mb-4" />
                 <h4 className="font-semibold text-[#F5F5F5] mb-1">GitHub</h4>
-                <a href="#" className="text-sm text-[#F5F5F5]/70 hover:text-[#D4AF37] flex items-center gap-1">
+                <a href="https://github.com/solangeadokpo" target="_blank" rel="noopener noreferrer" className="text-sm text-[#F5F5F5]/70 hover:text-[#D4AF37] flex items-center gap-1">
                   Profile <ArrowRight className="w-3 h-3" />
                 </a>
               </Card>
@@ -84,17 +84,17 @@ export function ContactSection() {
                 <Mail className="w-7 h-7 text-[#D4AF37] mb-4" />
                 <h4 className="font-semibold text-[#F5F5F5] mb-1">Email</h4>
                 <a
-                  href="mailto:contact@example.com"
+                  href="mailto:ahouefa05@gmail.com"
                   className="text-sm text-[#F5F5F5]/70 hover:text-[#D4AF37] flex items-center gap-1"
                 >
-                  Support <ArrowRight className="w-3 h-3" />
+                  Send Email <ArrowRight className="w-3 h-3" />
                 </a>
               </Card>
               {/* LinkedIn Card */}
               <Card className="p-6 bg-[#1A1A1A] border border-[#333333] hover:border-[#D4AF37]/50 transition-colors">
                 <Linkedin className="w-7 h-7 text-[#D4AF37] mb-4" />
                 <h4 className="font-semibold text-[#F5F5F5] mb-1">LinkedIn</h4>
-                <a href="#" className="text-sm text-[#F5F5F5]/70 hover:text-[#D4AF37] flex items-center gap-1">
+                <a href="https://www.linkedin.com/in/peace-solange-houéfa" target="_blank" rel="noopener noreferrer" className="text-sm text-[#F5F5F5]/70 hover:text-[#D4AF37] flex items-center gap-1">
                   Connect <ArrowRight className="w-3 h-3" />
                 </a>
               </Card>

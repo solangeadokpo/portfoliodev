@@ -8,6 +8,7 @@ import { ThemeToggle } from "@/components/theme-toggle"
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [language, setLanguage] = useState<"en" | "fr">("en")
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +17,10 @@ export function Header() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  const toggleLanguage = () => {
+    setLanguage(language === "en" ? "fr" : "en")
+  }
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -33,7 +38,7 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#121010]/95 backdrop-blur-md border-b border-[#D4AF37]/30 shadow-lg shadow-[#D4AF37]/10 transition-all duration-300">
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto px-6 py-2">
         <div className="flex items-center">
           {/* Logo - À gauche */}
           <div className="flex items-center gap-3 cursor-pointer group">
@@ -43,10 +48,10 @@ export function Header() {
               </div>
               <div className="absolute inset-0 bg-[#D4AF37]/20 rounded-xl blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
             </div>
-            <div className="flex flex-col">
+            {/* <div className="flex flex-col">
               <span className="text-2xl font-bold text-[#D4AF37] tracking-tight">Scriptia_</span>
               <span className="text-sm text-[#F5F5F5]/70 -mt-1 tracking-wide">Creative Developer</span>
-            </div>
+            </div> */}
           </div>
 
           {/* Spacer pour pousser tout à droite */}
@@ -76,9 +81,20 @@ export function Header() {
               Contact
             </Button>
 
-            {/* Theme Toggle & Mobile Menu */}
-            <div className="flex items-center gap-3">
+            {/* Theme Toggle & Language Toggle & Mobile Menu */}
+            <div className="flex items-center gap-2">
               <ThemeToggle />
+              
+              {/* Language Toggle */}
+              <Button
+                onClick={toggleLanguage}
+                variant="ghost"
+                size="icon"
+                className="text-[#F5F5F5] hover:text-[#D4AF37] hover:bg-[#D4AF37]/10 font-semibold"
+              >
+                {language === "en" ? "FR" : "EN"}
+              </Button>
+              
               <Button
                 variant="ghost"
                 size="icon"
