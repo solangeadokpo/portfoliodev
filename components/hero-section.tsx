@@ -39,15 +39,6 @@ export function HeroSection() {
               </p>
             </div>
 
-            <div className="pt-2">
-              <Button 
-                onClick={() => scrollToSection("contact")} 
-                className="bg-[#D4AF37] hover:bg-[#B8860B] text-[#121010] px-6 py-2 font-medium"
-              >
-                Contact
-              </Button>
-            </div>
-
             <div className="flex gap-3 pt-4">
               <a href="https://github.com/solangeadokpo" target="_blank" rel="noopener noreferrer" className="p-2 text-[#F5F5F5]/60 hover:text-[#D4AF37] transition-colors duration-200">
                 <Github className="w-5 h-5" />
