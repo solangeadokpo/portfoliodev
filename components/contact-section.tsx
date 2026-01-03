@@ -1,19 +1,17 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, MapPin, Phone, Send } from "lucide-react"
+import { Github, Mail, Linkedin, ArrowRight } from "lucide-react"
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "",
     message: "",
   })
 
@@ -31,126 +29,115 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-20">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
+    <section id="contact" className="py-24 relative overflow-hidden">
+      {/* Decorative Wavy Lines */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-screen-lg h-64 pointer-events-none opacity-20">
+        <svg width="100%" height="100%" viewBox="0 0 1200 300" preserveAspectRatio="none">
+          {Array.from({ length: 15 }).map((_, i) => (
+            <path
+              key={i}
+              d={`M -200 ${100 + i * 10} Q 600 ${100 + i * 10 - (i % 2 === 0 ? 40 : -40)} 1400 ${100 + i * 10}`}
+              stroke="url(#gold-gradient)"
+              strokeWidth="1"
+              fill="none"
+            />
+          ))}
+          <defs>
+            <linearGradient id="gold-gradient" gradientTransform="rotate(90)">
+              <stop offset="0%" stopColor="#D4AF37" stopOpacity="0" />
+              <stop offset="50%" stopColor="#D4AF37" stopOpacity="1" />
+              <stop offset="100%" stopColor="#D4AF37" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-5xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">
-              Travaillons <span className="text-primary">ensemble</span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-balance">
-              Vous avez un projet en tête ? N'hésitez pas à me contacter pour en discuter
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-bold text-[#F5F5F5] mb-4">Contact Us</h2>
+            <p className="text-lg text-[#F5F5F5]/70 max-w-2xl mx-auto">
+              Let's start a conversation. I'm here to help you bring your digital projects to life.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Info */}
-            <div className="space-y-8">
+          {/* "GET IN TOUCH" Section */}
+          <div className="grid lg:grid-cols-3 gap-8 mb-20">
+            <div className="lg:col-span-1 flex items-center">
               <div>
-                <h3 className="text-2xl font-semibold mb-6 text-foreground">Restons en contact</h3>
-                <p className="text-muted-foreground leading-relaxed mb-8">
-                  Je suis toujours ouvert aux nouvelles opportunités et collaborations. Que ce soit pour un projet
-                  freelance, un poste permanent ou simplement pour échanger sur le développement web, n'hésitez pas à me
-                  contacter.
-                </p>
-              </div>
-
-              <div className="space-y-6">
-                <Card className="p-6 bg-card border-border">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                      <Mail className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-card-foreground">Email</h4>
-                      <p className="text-muted-foreground">contact@example.com</p>
-                    </div>
-                  </div>
-                </Card>
-
-                <Card className="p-6 bg-card border-border">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                      <Phone className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-card-foreground">Téléphone</h4>
-                      <p className="text-muted-foreground">+33 1 23 45 67 89</p>
-                    </div>
-                  </div>
-                </Card>
-
-                <Card className="p-6 bg-card border-border">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                      <MapPin className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-card-foreground">Localisation</h4>
-                      <p className="text-muted-foreground">Paris, France</p>
-                    </div>
-                  </div>
-                </Card>
+                <p className="text-[#D4AF37] font-semibold mb-2">// Contact us</p>
+                <h3 className="text-4xl font-bold text-[#F5F5F5]">Get in Touch</h3>
               </div>
             </div>
+            <div className="lg:col-span-2 grid sm:grid-cols-3 gap-4">
+              {/* GitHub Card */}
+              <Card className="p-6 bg-[#1A1A1A] border border-[#333333] hover:border-[#D4AF37]/50 transition-colors">
+                <Github className="w-7 h-7 text-[#D4AF37] mb-4" />
+                <h4 className="font-semibold text-[#F5F5F5] mb-1">GitHub</h4>
+                <a href="#" className="text-sm text-[#F5F5F5]/70 hover:text-[#D4AF37] flex items-center gap-1">
+                  Profile <ArrowRight className="w-3 h-3" />
+                </a>
+              </Card>
+              {/* Email Card */}
+              <Card className="p-6 bg-[#1A1A1A] border border-[#333333] hover:border-[#D4AF37]/50 transition-colors">
+                <Mail className="w-7 h-7 text-[#D4AF37] mb-4" />
+                <h4 className="font-semibold text-[#F5F5F5] mb-1">Email</h4>
+                <a
+                  href="mailto:contact@example.com"
+                  className="text-sm text-[#F5F5F5]/70 hover:text-[#D4AF37] flex items-center gap-1"
+                >
+                  Support <ArrowRight className="w-3 h-3" />
+                </a>
+              </Card>
+              {/* LinkedIn Card */}
+              <Card className="p-6 bg-[#1A1A1A] border border-[#333333] hover:border-[#D4AF37]/50 transition-colors">
+                <Linkedin className="w-7 h-7 text-[#D4AF37] mb-4" />
+                <h4 className="font-semibold text-[#F5F5F5] mb-1">LinkedIn</h4>
+                <a href="#" className="text-sm text-[#F5F5F5]/70 hover:text-[#D4AF37] flex items-center gap-1">
+                  Connect <ArrowRight className="w-3 h-3" />
+                </a>
+              </Card>
+            </div>
+          </div>
 
-            {/* Contact Form */}
-            <Card className="p-8 bg-card border-border">
-              <h3 className="text-xl font-semibold mb-6 text-card-foreground">Envoyez-moi un message</h3>
-
+          {/* Form Section */}
+          <Card className="p-8 bg-[#1A1A1A] border border-[#333333]">
+            <div className="grid lg:grid-cols-2 gap-12">
+              {/* Form */}
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-card-foreground mb-2">
-                      Nom complet
-                    </label>
-                    <Input
-                      id="name"
-                      name="name"
-                      type="text"
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="bg-input border-border text-foreground"
-                      placeholder="Votre nom"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-card-foreground mb-2">
-                      Email
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="bg-input border-border text-foreground"
-                      placeholder="votre@email.com"
-                      required
-                    />
-                  </div>
-                </div>
-
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-card-foreground mb-2">
-                    Sujet
+                  <label htmlFor="name" className="sr-only">
+                    Name
                   </label>
                   <Input
-                    id="subject"
-                    name="subject"
+                    id="name"
+                    name="name"
                     type="text"
-                    value={formData.subject}
+                    value={formData.name}
                     onChange={handleChange}
-                    className="bg-input border-border text-foreground"
-                    placeholder="Sujet de votre message"
+                    className="bg-[#121010] border-[#333333] text-[#F5F5F5] placeholder:text-[#F5F5F5]/50"
+                    placeholder="What's your Name?"
                     required
                   />
                 </div>
-
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-card-foreground mb-2">
+                  <label htmlFor="email" className="sr-only">
+                    Email
+                  </label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="bg-[#121010] border-[#333333] text-[#F5F5F5] placeholder:text-[#F5F5F5]/50"
+                    placeholder="Your email"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="message" className="sr-only">
                     Message
                   </label>
                   <Textarea
@@ -158,27 +145,36 @@ export function ContactSection() {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    className="bg-input border-border text-foreground min-h-32"
-                    placeholder="Décrivez votre projet ou votre demande..."
+                    className="bg-[#121010] border-[#333333] text-[#F5F5F5] min-h-32 placeholder:text-[#F5F5F5]/50"
+                    placeholder="Message"
                     required
                   />
                 </div>
-
                 <Button
                   type="submit"
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-                  size="lg"
+                  className="bg-[#D4AF37] hover:bg-[#B8860B] text-[#121010] font-semibold px-8"
                 >
-                  <Send className="w-4 h-4 mr-2" />
-                  Envoyer le message
+                  Send Message
                 </Button>
               </form>
-            </Card>
-          </div>
+              {/* Right side text */}
+              <div className="flex flex-col justify-center">
+                <p className="text-[#D4AF37] font-semibold mb-2">Have any query?</p>
+                <h3 className="text-3xl font-bold text-[#F5F5F5] mb-4">CONTACT US</h3>
+                <p className="text-[#F5F5F5]/70">
+                  There is necessary for more than just name for evaluation so problem, frequently, organization may be.
+                </p>
+              </div>
+            </div>
+          </Card>
 
           {/* Footer */}
-          <div className="text-center mt-16 pt-8 border-t border-border">
-            <p className="text-muted-foreground">© 2024 Portfolio Développeur. Créé avec ❤️ et Next.js</p>
+          <div className="text-center mt-24 pt-12 border-t border-[#333333]">
+            <h3 className="text-4xl font-bold text-[#F5F5F5] mb-4">Let's talk</h3>
+            <p className="text-[#F5F5F5]/70">© {new Date().getFullYear()} Peace. All Rights Reserved.</p>
+            <div className="text-sm text-[#F5F5F5]/50 mt-2">
+              <span>Privacy Policy</span> | <span>Terms & Condition</span>
+            </div>
           </div>
         </div>
       </div>

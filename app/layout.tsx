@@ -1,30 +1,31 @@
-import type React from "react"
 import type { Metadata } from "next"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
-import { Analytics } from "@vercel/analytics/next"
-import { Suspense } from "react"
-import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css"
+import { ThemeProvider } from "@/components/theme-provider"
+import { Header } from "@/components/header"
+import { HeroSection } from "@/components/hero-section"
+import { AboutSection } from "@/components/about-section"
+import { ProjectsSection } from "@/components/projects-section"
+import { ContactSection } from "@/components/contact-section"
+import { FlowingLines } from "@/components/flowing-lines"
 
 export const metadata: Metadata = {
-  title: "Portfolio Développeur | Expert en Développement Web",
-  description: "Portfolio professionnel d'un développeur web spécialisé en React, Next.js et technologies modernes",
-  generator: "v0.app",
+  title: "Portfolio Développeur",
+  description: "Portfolio de développeur web full-stack",
 }
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
-    <html lang="fr" suppressHydrationWarning>
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-          <Suspense fallback={null}>{children}</Suspense>
+    <html suppressHydrationWarning>
+      <body className={`${GeistSans.variable} ${GeistMono.variable}`}>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          {children}
         </ThemeProvider>
-        <Analytics />
       </body>
     </html>
   )
